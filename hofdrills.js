@@ -119,3 +119,29 @@ const decode = function(words) {
 
 // TEST:
 //console.log(decode(words));
+
+
+//------------------------------//
+//Freecodecamp bonus challenges://
+//------------------------------//
+
+function multiplyAll(arr) {
+    let product = 1;
+    for(let i = 0; i < arr.length; i++) {
+        for(let j = 0; j < arr[i].length; j++){
+            product *= arr[i][j];
+        }
+    }
+    return product;
+}
+
+function lookUpProfile(name, prop){
+    // Only change code below this line
+    for (let i = 0; i < contacts.length; i++) {
+        if (name === contacts[i].firstName) {
+            return contacts[i][prop] ? contacts[i][prop] : "No such property";
+        }
+    }
+    return "No such contact";
+    // Only change code above this line
+}
