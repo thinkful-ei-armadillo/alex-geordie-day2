@@ -9,8 +9,9 @@ const repeat = function(fn,n) {
 const hello = () => console.log('Hello world');
 const goodbye = () => console.log('Goodbye world');
 
-repeat(hello, 5);
-repeat(goodbye,5);
+// TESTS:
+//repeat(hello, 5);
+//repeat(goodbye,5);
 
 function filter(names, callback) {
     let newNames = [];
@@ -22,20 +23,29 @@ function filter(names, callback) {
     return newNames;
 }
 
-console.log(filter(myNames, name => name[0] === 'R');
+// TEST:
+// console.log(filter(myNames, name => name[0] === 'R');
 
+function hazardWarningCreator(typeOfWarning) {
+    let warningCounter = 0;
+
+    return (location) => {
+        warningCounter++;
+        let times = (warningCounter === 1) ? 'time' : 'times';
+        console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${times} today!`);
+    }
 }
-// DO NOT EDIT BETWEEN THESE LINES, BUT DO READ THE CODE ----->
-// First we setup an array of strings we plan to filter:
-const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
 
-// We use your `filter` function here, capturing a new array into `filteredNames`
-// comprised of names that only begin with 'R'
-const filteredNames = filter(myNames, function (name) {
-    // This is known as a "predicate function" - it's a function that 
-    // only returns a boolean
-    return name[0] === 'R';
-});
+// const rocksWarning = hazardWarningCreator('Rocks on the Road');
+// const acidWarning = hazardWarningCreator('Acid on the Road');
+// const aliensWarning = hazardWarningCreator('Aliens on the Road');
 
-console.log(filteredNames) // => ['Rich', 'Ray']
-// <---- DO NOT EDIT BETWEEN THESE LINES
+// rocksWarning('Main St and Pacific Ave');
+// rocksWarning('Rocks Valley');
+// acidWarning('Random Chemical Plant');
+// acidWarning('TB Station');
+// aliensWarning('Area 51');
+// aliensWarning('Sunshine Meadows');
+// aliensWarning("Old McDonald's Farm");
+
