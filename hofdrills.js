@@ -49,3 +49,21 @@ function hazardWarningCreator(typeOfWarning) {
 // aliensWarning('Sunshine Meadows');
 // aliensWarning("Old McDonald's Farm");
 
+function filter(keys, callback) {
+    let newNames = [];
+    for (let i = 0; i < keys.length; i++) {
+        if (callback(keys[i])) {
+            newNames.push(keys[i]);
+        }
+    }
+    return newNames;
+}
+
+const turtleMoves = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+console.log(filter(turtleMoves, move => {
+    return (move[0] > 0 || move[1] > 0)
+}));
+
+console.log(turtleMoves.map(steps => Math.abs(steps[0]) + Math.abs(steps[1])));
+turtleMoves.forEach(steps => { console.log(Math.abs(steps[0]) + Math.abs(steps[1])) });
