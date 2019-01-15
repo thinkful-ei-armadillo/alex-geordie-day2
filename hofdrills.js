@@ -1,5 +1,43 @@
 'use strict';
 
+//------------------------------//
+//Min-max and average functions://
+//------------------------------//
+
+function max(numbers) {
+    let i = 1;
+    let max = numbers[0];
+    while (i < numbers.length) {
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
+        i++;
+    }
+    return max;
+}
+  
+function min(numbers) {
+    let i = 1;
+    let min = numbers[0];
+    while (i < numbers.length) {
+        if (numbers[i] < min) {
+            min = numbers[i];
+        }
+        i++;
+    }
+    return min;
+}
+
+function average(numbers) {
+    let sum = 0;
+    numbers.forEach(num => sum += num);
+    return sum/numbers.length;
+}
+
+//-----------------------------//
+//Higher-order function drills://
+//-----------------------------//
+
 const repeat = function(fn,n) {
     for (let i = 0; i < n; i++) {
         fn();
