@@ -61,9 +61,23 @@ function filter(keys, callback) {
 
 const turtleMoves = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 
-console.log(filter(turtleMoves, move => {
-    return (move[0] > 0 || move[1] > 0)
-}));
+// console.log(filter(turtleMoves, move => {
+//     return (move[0] > 0 || move[1] > 0)
+// }));
+// console.log(turtleMoves.map(steps => Math.abs(steps[0]) + Math.abs(steps[1])));
+// turtleMoves.forEach(steps => { console.log(Math.abs(steps[0]) + Math.abs(steps[1])) });
 
-console.log(turtleMoves.map(steps => Math.abs(steps[0]) + Math.abs(steps[1])));
-turtleMoves.forEach(steps => { console.log(Math.abs(steps[0]) + Math.abs(steps[1])) });
+const words = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+
+const decode = function(words) {
+    return words.split(' ').reduce( (acc, cur) => {
+        if (cur.length === 3) { 
+            return acc + ' ';
+        } else {
+            return acc + cur[cur.length-1].toUpperCase();
+        }
+    }, '');
+}
+
+// TEST:
+//console.log(decode(words));
