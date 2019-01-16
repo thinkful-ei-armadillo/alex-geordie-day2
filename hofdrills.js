@@ -51,6 +51,8 @@ const goodbye = () => console.log('Goodbye world');
 //repeat(hello, 5);
 //repeat(goodbye,5);
 
+const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
+
 function filter(names, callback) {
     let newNames = [];
     for (let i = 0; i < names.length; i++) {
@@ -62,7 +64,7 @@ function filter(names, callback) {
 }
 
 // TEST:
-// console.log(filter(myNames, name => name[0] === 'R');
+// console.log(filter(myNames, name => name[0] === 'R'));
 
 function hazardWarningCreator(typeOfWarning) {
     let warningCounter = 0;
